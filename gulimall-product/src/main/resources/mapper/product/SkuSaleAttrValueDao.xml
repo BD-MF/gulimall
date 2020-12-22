@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigdata.gulimall.product.dao.SkuSaleAttrValueDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.bigdata.gulimall.product.entity.SkuSaleAttrValueEntity" id="skuSaleAttrValueMap">
+        <result property="id" column="id"/>
+        <result property="skuId" column="sku_id"/>
+        <result property="attrId" column="attr_id"/>
+        <result property="attrName" column="attr_name"/>
+        <result property="attrValue" column="attr_value"/>
+        <result property="attrSort" column="attr_sort"/>
+    </resultMap>
+    <select id="getSaleAttrsBySpuId" resultType="com.bigdata.gulimall.product.vo.SkuItemSaleAttrVo">
+        select pssav.attr_id,pssav.attr_name,group_concat(distinct pssav.attr_value) attrValues
+        from pms_sku_info pki
+        left join pms_sku_sale_attr_value pssav on pki.sku_id = pssav.sku_id
+        where pki.spu_id=#{spuId}
+        group by pssav.attr_id,pssav.attr_name
+    </select>
+
+
+</mapper>
