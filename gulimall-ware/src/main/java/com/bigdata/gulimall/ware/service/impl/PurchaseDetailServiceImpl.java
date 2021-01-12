@@ -1,7 +1,7 @@
 package com.bigdata.gulimall.ware.service.impl;
 
 import com.bigdata.common.constant.WareConstant;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

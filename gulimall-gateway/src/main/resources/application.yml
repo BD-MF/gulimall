@@ -1,5 +1,13 @@
+server:
+  port: 88
+
 spring:
   cloud:
+    alicloud:
+      access-key: LTAI4GH1zUFBLN6WBsQVmMXS
+      secret-key: tLcN62LFw5g67AKXPi1mxmrOKl35G3
+      oss:
+        endpoint: gulimall-mfljw.oss-cn-beijing.aliyuncs.com
     gateway:
       routes:
 

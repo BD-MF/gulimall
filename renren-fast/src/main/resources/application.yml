@@ -42,11 +42,17 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848 #47.95.202.144
+        server-addr: 47.95.202.144:8848 #47.95.202.144
       config:
         name: renren-fast
-        server-addr: 127.0.0.1:8848
+        server-addr: 47.95.202.144:8848
         namespace: ee409c3f-3206-4a3b-ba65-7376922a886d
+        max-retry: 1000
+    alicloud:
+      access-key: LTAI4GH1zUFBLN6WBsQVmMXS
+      secret-key: tLcN62LFw5g67AKXPi1mxmrOKl35G3
+      oss:
+        endpoint: gulimall-mfljw.oss-cn-beijing.aliyuncs.com
 #  resources:
 #    add-mappings: false
 #mybatis

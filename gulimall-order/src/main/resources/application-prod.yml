@@ -1,0 +1,38 @@
+server:
+    port: 9000
+
+spring:
+    datasource:
+        #MySQL配置
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://47.95.202.144:3306/gulimall_oms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+        username: root
+        password: root
+    application:
+        name: gulimall-order
+    cloud:
+        nacos:
+            discovery:
+                server-addr: 47.95.202.144:8848
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        thymeleaf:
+            cache: false
+        redis:
+            host: 47.95.202.144
+            port: 6379
+
+
+mybatis-plus:
+    global-config:
+        db-config:
+            id-type: auto
+    mapper-locations: classpath:/mapper/**/*.xml
+
+logging:
+    level:
+        com.bigdata.gulimall.order: debug
+        root: warn
+    pattern:
+        console: "%d{yyyy-MM-dd} [%thread] - %msg%n"
+

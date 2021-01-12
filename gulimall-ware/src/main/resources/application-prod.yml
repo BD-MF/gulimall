@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    #MySQL配置
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.95.202.144:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+  application:
+    name: gulimall-ware
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.95.202.144:8848
+    alicloud:
+      access-key: LTAI4GH1zUFBLN6WBsQVmMXS
+      secret-key: tLcN62LFw5g67AKXPi1mxmrOKl35G3
+      oss:
+        endpoint: gulimall-mfljw.oss-cn-beijing.aliyuncs.com
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  mapper-locations: classpath:/mapper/**/*.xml
+logging:
+  level:
+    com.bigdata.gulimall.ware: debug
+

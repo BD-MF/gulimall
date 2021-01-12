@@ -3,7 +3,7 @@
     <div class="site-navbar__header">
       <h1 class="site-navbar__brand" @click="$router.push({ name: 'home' })">
         <a class="site-navbar__brand-lg" href="javascript:;"
-          >电商后台管理系统</a
+          >微服务电商后台管理系统</a
         >
         <a class="site-navbar__brand-mini" href="javascript:;">B2B</a>
       </h1>
